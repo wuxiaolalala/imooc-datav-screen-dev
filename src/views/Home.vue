@@ -33,7 +33,9 @@
           </div>
         </div>
         <div class="right">
-          <div class="right-top1">right-top1</div>
+          <div class="right-top1">
+            <center-header :data="headerData" />
+          </div>
           <div class="right-top2">right-top2</div>
           <div class="right-bottom">
             <div class="right-left">
@@ -61,13 +63,23 @@ import TotalGender from '@/components/TotalGender'
 import TotalRider from '@/components/TotalRider'
 import AverageAge from '@/components/AverageAge'
 import HotCategory from '@/components/HotCategory'
+import CenterHeader from '@/components/CenterHeader'
 import { ref } from 'vue'
 import useScreenData from '@/hooks/useScreenData'
 import TotalDevice from '@/components/TotalDevice'
 // @ is an alias to /src
 export default {
   name: 'Home',
-  components: { TopHeader, TotalUser, AverageAge, TotalDevice, TotalGender, TotalRider, HotCategory },
+  components: {
+    TopHeader,
+    TotalUser,
+    AverageAge,
+    TotalDevice,
+    TotalGender,
+    TotalRider,
+    HotCategory,
+    CenterHeader
+  },
   setup() {
     const loading = ref(false)
     return {
@@ -143,6 +155,7 @@ export default {
         flex: 1;
         display: flex;
         flex-direction: column;
+        margin-left: 10px;
         .right-top1 {
           width: 100%;
           height: 206px;
